@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- bootstrap css -->
+ <!-- main css -->
+ <link rel="stylesheet" href="css/main.css">
+ <!-- google fonts -->
+
+ <!-- font awesome -->
+ <title>Hex Color</title>
+ <style>
+ </style>
+</head>
+
+<body>
+
+ <div class="container">
+  <div class="row max-height align-items-center">
+   <div class="col-10 col-md-6 mx-auto text-center">
+    <h1 class=text-uppercase>hex color :<span id="hex-value"></span></h1>
+    <a href="#" id="btn" class="btn btn-secondary text-uppercase my-2">click me</a>
+   </div>
+  </div>
+ </div>
+
+
+
+
+
+ <!-- jquery -->
+ <!-- script js -->
+ <script >
+ (function() {
+    const button = document.querySelector('#btn')
+    const body = document.querySelector('body')
+    const hexValues = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+    const value = document.querySelector('#hex-value')
+
+    button.addEventListener('click', changeHex)
+
+    function changeHex(){
+        let hex = '#'
+
+        for (let i = 0; i < 6; i++){
+            const index = Math.floor(Math.random()*hexValues.length)
+            hex += hexValues[index]
+        }
+        value.textContent = hex
+        body.style.backgroundColor = hex
+    }
+} )()</script>
+</body>
+
+</html>
